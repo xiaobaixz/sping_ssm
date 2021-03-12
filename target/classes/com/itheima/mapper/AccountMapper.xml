@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--namespace就是对应的接口，通过这个配置可以直接实现mapper层定义的接口，就不用写接口的实现类了-->
+<mapper namespace="com.itheima.mapper.AccountMapper">
+    <insert id="save" parameterType="account">
+        insert into account values(#{id},#{name},#{money})
+    </insert>
+
+    <select id="findAll" resultType="account">
+        select * from account
+    </select>
+</mapper>
